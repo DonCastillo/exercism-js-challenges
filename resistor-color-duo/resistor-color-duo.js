@@ -3,10 +3,19 @@
 // convenience to get you started writing code faster.
 //
 
-export const decodedValue = (array) => {
-  const COLORS = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white'];
-  var color1 = COLORS.indexOf( array[0] );
-  var color2 = COLORS.indexOf( array[1] );
-  return `${color1}${color2}`/1;
+const COLORS = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white'];
+
+const colorCode = (color) => {
+  return COLORS.indexOf(color);
 };
+
+
+export const decodedValue = (array) => {
+  var color1 = colorCode( array[0] );
+  var color2 = colorCode( array[1] );
+  return Number.parseInt(`${color1}${color2}`, 10);
+};
+
+
+
 
